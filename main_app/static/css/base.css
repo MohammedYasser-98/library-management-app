@@ -1,17 +1,17 @@
-/* static/css/base.css */
+static/css/base.css
 
 html {
     box-sizing: border-box;
 }
 
-/* The Universal Selector */
+
 *,
 *::before,
 *::after {
     box-sizing: inherit;
 }
 
-/* Reset font size to 62.5% of the user preference */
+
 :root {
     font-size: 62.5%;
 }
@@ -45,35 +45,37 @@ body {
     --card-border-radius: 6px;
 }
 
-/* Header styling */
+
 header {
     width: 100%;
-    background: var(--nav-bg-ff); /* rgba(104, 197, 248, .9) */
+    background: var(--nav-bg-ff); 
     border-bottom: var(--borders);
     display: flex;
-    justify-content: space-between; /* Space out logo and nav */
-    align-items: center; /* Vertically center items */
-    padding: 10px 20px; /* Add padding for spacing */
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 10px 20px; 
 }
 
-/* Logo container styling */
+
 .header-logo-container {
     display: flex;
-    align-items: center; /* Vertically center the logo */
-    overflow: hidden; /* Prevent overflow */
+    align-items: center; 
+    overflow: hidden; 
     margin: auto;
     padding: 10px 20px 0;
     max-width: 500px;
 }
 
-/* Logo image styling */
+
 .header-logo-container img {
-    width: 150px; /* Adjust as needed */
-    height: auto; /* Maintain aspect ratio */
-    max-width: 100%; /* Ensure it doesn't overflow */
+    width: 300px; 
+    height: auto; 
+    max-width: 100%; 
+    margin-bottom: 20px;
+    margin-top: 20px;
 }
 
-/* Navbar styling */
+
 nav {
     margin: 10px;
 }
@@ -103,18 +105,18 @@ nav a:hover {
     color: var(--link-hover-color);
 }
 
-/* Main content styling */
+
 main {
     width: 100%;
     padding: 0 10px;
 }
 
-/* Headings */
+
 h2 {
     font-size: var(--font-xl);
 }
 
-/* Buttons */
+
 .btn {
     font-size: var(--font-l);
     padding: 8px 16px;
@@ -153,7 +155,7 @@ h2 {
     border-color: var(--danger);
 }
 
-/* Page header styling */
+
 .page-header {
     display: flex;
     align-items: center;
@@ -174,12 +176,12 @@ h2 {
     margin-left: 20px;
 }
 
-/* Page content styling */
+
 .page-content {
     font-size: var(--font-reg);
 }
 
-/* Media queries for responsive design */
+
 @media only screen and (min-width: 768px) {
     header {
         position: sticky;
@@ -200,7 +202,7 @@ h2 {
         padding: 0 15px;
     }
 
-    /* Visual fix to help align logo */
+    
     .header-logo-container {
         padding-top: 3px;
     }
@@ -268,7 +270,7 @@ h2 {
     }
 
     .header-logo-container {
-        /* Visual fix to help align logo */
+        
         padding-top: 6px;
         width: 256px;
         height: 35px;
@@ -289,7 +291,7 @@ h2 {
     }
 }
 
-/* Responsive design for smaller screens */
+
 @media (max-width: 768px) {
     header {
         flex-direction: column;

@@ -12,7 +12,36 @@
     {% endblock %}
   </head>
   <body>
-    <header>
+  <!--------------------------------------------------------------------------------------------------->
+
+  <header>
+    <div class="header-logo-container">
+        <a href="/">
+          <img src="{% static 'images/open-book-header-1.svg' %}" alt="The Book Logo" />
+        </a>
+      </div>
+
+  <nav class="navbar" style="background-color: #e3f2fd;">
+    <div class="container-fluid">
+      
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/reservations ">All Reservations </a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+</header>
+  <!--------------------------------------------------------------------------------------------------->
+    <!-- <header>
       <div class="header-logo-container">
         <a href="/">
           <img src="{% static 'images/open-book-header.svg' %}" alt="The Book Logo" />
@@ -23,7 +52,7 @@
           <li><a href="/about">About</a></li>
         </ul>
       </nav>
-    </header>
+    </header> -->
     <main>
      {% block content %} 
      {% endblock %}
