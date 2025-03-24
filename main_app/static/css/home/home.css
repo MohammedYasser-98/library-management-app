@@ -1,0 +1,39 @@
+body {
+    background-image: url('https://img.freepik.com/free-photo/collection-old-textbooks-shelf-generated-by-ai_24911-72347.jpg?t=st=1742804576~exp=1742808176~hmac=ce67893a3b87a1b693c1df03c3e5b4120e3a514831a50b431c898528c6fbf68f&w=1380');
+    background-size: contain; /* This makes the background cover the entire element */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position: center; /* Centers the image */
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.45); /* Adjust the alpha (0.5) for darkness */
+    z-index: 0; /* Make sure it sits above the background image */
+    pointer-events: none; /* Allow clicks to pass through */
+}
+
+/*------------------------------------------*/
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: 100%;
+  }
+  
+  main > section {
+    width: 100%;
+    padding: 10px 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  

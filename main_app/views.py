@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 
 class Reservation:
     def __init__(self, borrow_date, due_date):
@@ -18,12 +17,14 @@ reservation = [
 
 def home(request):
     
-    return HttpResponse('<h1>Welcome!</h1>')
+    return render(request, 'home/home.html')
 
 def about(request):
     
     return render(request, 'about.html')
 
 def reservation_index(request):
-    # Render the cats/index.html template with the cats data
-    return render(request, 'reservations/index.html')
+    
+    return render(request, 'reservations/index.html', {'reservation': reservation})
+
+

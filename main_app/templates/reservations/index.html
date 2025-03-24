@@ -1,8 +1,13 @@
+
+
 {% extends 'base.html' %} 
-{% load static %} 
+{% load static %}
 {% block head %}
-<!-- <link rel="stylesheet" href="{% static 'css/cats/cat-index.css' %}"/> -->
-{% endblock %} 
+<link rel="stylesheet" href="{% static 'css/reservation/reservation-index.css' %}"/>
+
+
+{% endblock %}
+
 {% block content %}
 
 <section class="page-header">
@@ -14,7 +19,7 @@
 </section>
 
 <section class="card-container">
-  {% for reservation in reservations %}
+  {% for reservationn in reservation %}
     <!-- <div class="card">
       <div class="card-content">
         <div class="card-img-container">
@@ -29,7 +34,7 @@
         <p><small>Due Date: {{reservation.due_date}}</small></p>
       </div>
     </div> -->
-
+    
     <div class="card text-center">
         <div class="card-header">
           <ul class="nav nav-tabs card-header-tabs">
@@ -42,8 +47,8 @@
           </ul>
         </div>
         <div class="card-body">
-          <h5 class="card-title">Borrow Date: {{reservation.borrow_date}}</h5>
-          <h5 class="card-title">Due Date: {{reservation.due_date}}</h5>
+          <h5 class="card-title">Borrow Date: {{reservationn.borrow_date}}</h5>
+          <h5 class="card-title">Due Date: {{reservationn.due_date}}</h5>
           <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
         </div>
       </div>
