@@ -1,6 +1,6 @@
 .card {
     margin: 10px;
-    
+    height: 275px;
     width: 275px;
     margin-bottom: 20px;
     border: var(--borders);
@@ -42,4 +42,9 @@ li {margin-right: 20px;}
   .card p {
     margin: 5px 0;
     font-size: var(--font-reg);
+  }
+
+
+  .btn-primary{
+    background-color: aquamarine;
   }

@@ -19,7 +19,7 @@
 </section>
 
 <section class="card-container">
-  {% for reservationn in reservation %}
+  {% for reservation in reservations %}
     <!-- <div class="card">
       <div class="card-content">
         <div class="card-img-container">
@@ -35,7 +35,7 @@
       </div>
     </div> -->
     
-    <div class="card text-center">
+    <div class="card text-center" id="singal-card">
         <div class="card-header">
           <ul class="nav nav-tabs card-header-tabs">
             <li class="nav-item">
@@ -47,9 +47,11 @@
           </ul>
         </div>
         <div class="card-body">
-          <h5 class="card-title">Borrow Date: {{reservationn.borrow_date}}</h5>
-          <h5 class="card-title">Due Date: {{reservationn.due_date}}</h5>
+          <h5 class="card-title">Borrow Date: {{reservation.borrow_date}}</h5>
+          <h5 class="card-title">Due Date: {{reservation.due_date}}</h5>
           <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <a href="{% url 'reservation-detail' reservation.id %}" class="btn btn-primary">Show detail</a>
+          
         </div>
       </div>
   {% endfor %}
