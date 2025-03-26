@@ -1,0 +1,1 @@
+web: gunicorn <library-management-app>.wsgi
