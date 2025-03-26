@@ -30,7 +30,16 @@
             <a class="nav-link active" aria-current="page" href="{% url 'about' %}">About</a>
           </li>
           <li class="nav-item">
+            <a href="{% url 'reservation-create' %}">Make Reservations</a>
+          </li>
+          <li class="nav-item">
+            <a href="{% url 'book-create' %}">Add a Book</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="{% url 'reservation-index' %} ">All Reservations </a>
+          </li>
+          <li class="nav-item">
+            <a href="{% url 'book-index' %}">All Books</a>
           </li>
           
         </ul>
@@ -40,19 +49,8 @@
 
 
 </header>
-  <!--------------------------------------------------------------------------------------------------->
-    <!-- <header>
-      <div class="header-logo-container">
-        <a href="/">
-          <img src="{% static 'images/open-book-header.svg' %}" alt="The Book Logo" />
-        </a>
-      </div>
-      <nav>
-        <ul>
-          <li><a href="/about">About</a></li>
-        </ul>
-      </nav>
-    </header> -->
+  
+ 
     <main>
      {% block content %} 
      {% endblock %}

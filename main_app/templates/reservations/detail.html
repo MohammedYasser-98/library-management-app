@@ -13,6 +13,65 @@
    
     <p>Borrow Date: {{ reservation.borrow_date}}</p>
     <p>Due Date: {{ reservation.due_date}}</p>
+
+    <div class="reservation-actions">
+        <a href="{% url 'reservation-update' reservation.id %}" class="btn warn">Edit</a>
+        <a href="{% url 'reservation-delete' reservation.id %}" class="btn danger">Delete</a>
+      </div>
   </div>
 </section>
+
+<section class="books">
+    <div class="subsection-title">
+      <h2>Books</h2>
+      <!-- <img src="{% static 'images/string.svg' %}" alt="A ball of string" />
+      <img src="{% static 'images/mouse.svg' %}" alt="A mouse" />
+      <img src="{% static 'images/fish.svg' %}" alt="A fishy toy" /> -->
+    </div>
+
+    <h3>Reservation {{ reservation.id }} Books</h3>
+    <div class="subsection-content">
+      {% if reservation.book.count %} 
+        {% for book in reservation.book.all %}
+          <div class="book-container">
+            <div class="color-block"></div>
+            <a href="{% url 'book-detail' book.id %}">
+              <p> {{ book.title }} {{ book.author }}</p>
+            </a>
+            <div>
+                <form action="{% url 'remove-book' reservation.id book.id %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger">Remove Book</button>
+                  </form>
+            </div>
+          </div>
+        {% endfor %} 
+      {% else %}
+        <p class="no-books">There are no books in reservation {{ reservation.id }}!</p>
+      {% endif %}
+    </div>
+
+
+    <h3>Available Books</h3>
+    <div class="subsection-content">
+    {% if books.count %}
+      {% for book in books.all %}
+        <div class="book-container">
+          <div class="color-block"></div>
+          <a href="{% url 'book-detail' book.id %}"></a>
+          <h3>{{ book.title }}</h3>
+          <p>{{ book.author }}</p>
+        </a>
+          <form action="{% url 'associate-book' reservation.id book.id %}" method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn submit">Borrow Book</button>
+          </form>
+          
+        </div>
+      {% endfor %}
+      {% else %}
+    <p class="all-books">Reservation {{ reservation.id }} already has all the available books</p>
+  {% endif %}
+    </div>
+  </section>
 {% endblock %}

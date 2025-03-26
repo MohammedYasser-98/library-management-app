@@ -20,22 +20,27 @@
 
 <section class="card-container">
   {% for reservation in reservations %}
-    <!-- <div class="card">
+    <div class="card">
       <div class="card-content">
-        <div class="card-img-container">
+        <!-- <div class="card-img-container">
           <img
             src="{% static 'images/open-book.png' %}"
             alt="ob"
           />
-        </div>
+        </div> -->
         <h2 class="card-title">reservation</h2>
         
         <p><small>Borrow Date: {{reservation.borrow_date}}</small></p>
         <p><small>Due Date: {{reservation.due_date}}</small></p>
+        
       </div>
-    </div> -->
+      <div class="detail-button">
+        <a href="{% url 'reservation-detail' reservation.id %}" class="btn btn-primary">Show detail</a>
+
+      </div>
+    </div>
     
-    <div class="card text-center" id="singal-card">
+    <!-- <div class="card text-center" id="singal-card">
         <div class="card-header">
           <ul class="nav nav-tabs card-header-tabs">
             <li class="nav-item">
@@ -53,7 +58,7 @@
           <a href="{% url 'reservation-detail' reservation.id %}" class="btn btn-primary">Show detail</a>
           
         </div>
-      </div>
+      </div> -->
   {% endfor %}
 </section>
 
