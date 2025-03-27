@@ -1,5 +1,5 @@
 
-![alt text](image.png)
+![alt text](image-1.png)
  
 
 ## App Name: Library Management App   
@@ -11,9 +11,7 @@ Library Management App is a comprehensive library management system designed to 
 - Catalog books with titles, authors, and availability status  
 - Manage user reservations  
 - Track book checkouts and returns  
-- Generate reports on library usage  
   
-
 ### Deployed App  
 
 
@@ -34,7 +32,7 @@ Python, Django, HTML5, CSS3, Bootstrap, PostgreSQLand Heroku
 - Django documentation for authentication flow  
 - Bootstrap documentation for card layouts  
 
-## 🔜 Next Steps (Stretch Goals)  
+## Next Steps (Stretch Goals)  
 
 - Add user accounts for patrons  
 - Enable book search  

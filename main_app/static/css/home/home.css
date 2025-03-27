@@ -1,45 +1,44 @@
 body {
   background-image: url('https://www.skoolbeep.com/blog/wp-content/uploads/2020/12/WHAT-IS-THE-PURPOSE-OF-A-LIBRARY-MANAGEMENT-SYSTEM-min.png');
-  background-size: contain; /* Changed from 'contain' to 'cover' for better coverage */
+  background-size: contain; 
   background-repeat: no-repeat;
   background-position: center;
-  background-attachment: fixed; /* Optional: keeps background fixed during scrolling */
+  background-attachment: fixed; 
   position: relative;
 }
 
-/* Dark overlay only on the background image */
+
 body::before {
   content: '';
-  position: fixed; /* Changed from absolute to fixed for full coverage */
+  position: fixed; 
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.6); /* Adjust opacity (0.6) to make darker/lighter */
-  z-index: -1; /* Places behind all content */
+  background-color: rgba(0, 0, 0, 0.6); 
+  z-index: -1; 
   pointer-events: none;
 }
 
-/* Ensure all content stays above the darkened background */
+
 main, 
-.header-logo-container, 
-.logo-container, 
+.header-logo-container,  
 .reservation-container, 
 .login {
   position: relative;
-  z-index: 1; /* Brings content above the darkened overlay */
-  color: #ffffff; /* White text for better contrast */
+  z-index: 1; 
+  color: #ffffff; 
 }
 
-/* Login form styling */
+
 .login {
-  background-color: rgba(255, 255, 255, 0.1); /* Slight transparency */
-  backdrop-filter: blur(5px); /* Optional: adds subtle blur effect */
+  background-color: rgba(255, 255, 255, 0.1); 
+  backdrop-filter: blur(5px); 
   border-radius: 10px;
   padding: 2rem;
 }
 
-/* Improve text readability */
+
 .login h1,
 .login label,
 .login p {
@@ -77,34 +76,4 @@ main,
 
 .header-logo-container {
   display: none;
-}
-
-.logo-container {
-    max-width: 375px; /* Keeps container max-width */
-    width: 100%; /* Makes it responsive */
-    background-color: rgba(255, 255, 255, 0.15);
-    display: grid;
-    place-items: center; /* Centers child elements both ways */
-    max-width: 375px;
-    margin-bottom: 20px;
-}
-
-/* For the image inside logo-container */
-.logo-container img {
-    width: 100%; /* Makes image responsive within container */
-    height: auto; /* Maintains aspect ratio */
-    max-height: 300px; /* Limits maximum height */
-    object-fit: contain; /* Ensures full image is visible */
-    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.3)); /* Adds subtle glow */
-}
-
-/* For larger screens */
-@media only screen and (min-width: 768px) {
-    .logo-container {
-        max-width: 520px; /* Original desktop size */
-    }
-    
-    .logo-container img {
-        max-height: 400px; /* Larger image on desktop */
-    }
 }
