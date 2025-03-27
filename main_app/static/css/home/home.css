@@ -1,122 +1,110 @@
-/* body {
-    background-image: url('https://images.pexels.com/photos/1290141/pexels-photo-1290141.jpeg?auto=compress&cs=tinysrgb&w=600');
-    background-size: contain; 
-    background-repeat: no-repeat; 
-    background-position: center; 
+body {
+  background-image: url('https://www.skoolbeep.com/blog/wp-content/uploads/2020/12/WHAT-IS-THE-PURPOSE-OF-A-LIBRARY-MANAGEMENT-SYSTEM-min.png');
+  background-size: contain; /* Changed from 'contain' to 'cover' for better coverage */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed; /* Optional: keeps background fixed during scrolling */
+  position: relative;
 }
 
+/* Dark overlay only on the background image */
 body::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.9); 
-    z-index: 0; 
-    pointer-events: none; 
-} */
-
-
-/* .log-in{
-  background-color: pink;
-} */
-/*------------------------------------------*/
-
-main {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    height: 100%;
-  }
-  
-  main > section {
-    width: 100%;
-    padding: 10px 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-  }
-  
-  /*--------------------------------------------------*/
-
-  .header-logo-container {
-    display: none;
-  }
-  
-  .header-logo-container img {
-    width: 300px; 
-    height: auto; 
-    max-width: 100%; 
-    margin-bottom: 20px;
-    margin-top: 20px;
+  content: '';
+  position: fixed; /* Changed from absolute to fixed for full coverage */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6); /* Adjust opacity (0.6) to make darker/lighter */
+  z-index: -1; /* Places behind all content */
+  pointer-events: none;
 }
 
-  .logo-container {
-    max-width: 375px;
-  }
-  
-  .reservation-container {
-    width: 80%;
-  }
-  
+/* Ensure all content stays above the darkened background */
+main, 
+.header-logo-container, 
+.logo-container, 
+.reservation-container, 
+.login {
+  position: relative;
+  z-index: 1; /* Brings content above the darkened overlay */
+  color: #ffffff; /* White text for better contrast */
+}
+
+/* Login form styling */
+.login {
+  background-color: rgba(255, 255, 255, 0.1); /* Slight transparency */
+  backdrop-filter: blur(5px); /* Optional: adds subtle blur effect */
+  border-radius: 10px;
+  padding: 2rem;
+}
+
+/* Improve text readability */
+.login h1,
+.login label,
+.login p {
+  color: #ffffff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.login input {
+  background-color: rgba(255, 255, 255, 0.9);
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+/* Responsive adjustments */
+@media only screen and (min-width: 768px) {
   .login {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 80%;
-    /* color: white; */
+      background-color: rgba(255, 255, 255, 0.15);
+      max-width: 500px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      margin-top: 200px;
+      margin-left: 369px;
   }
-  
-  .login h1 {
-    font-size: clamp(3.2rem, 3vw, 4.8rem);
-    margin: 10px 0;
-  }
-  
-  .login > p {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    margin: 14px 0 0px;
-  }
-  
-  .login label {
-    font-size: var(--font-reg);
-    margin-bottom: 6px;
-  }
-  
-  .login input {
-    font-size: var(--font-l);
-    padding: 2px 4px;
-  }
-  
-  .login .btn {
-    align-self: flex-end;
-    margin-right: 0;
-    margin-top: 16px;
-  }
-  
-  @media only screen and (min-width: 768px) {
-    main {
-      justify-content: space-around;
-    }
-  
-    main > section {
-      width: 40%;
-    }
-  
-    .login {
-      border: var(--borders);
-      padding: 20px;
-      border-radius: var(--card-border-radius);
-      box-shadow: var(--card-box-shadow);
-      width: 100%;
-    }
-  
+}
+
+.log-in{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.header-logo-container {
+  display: none;
+}
+
+.logo-container {
+    max-width: 375px; /* Keeps container max-width */
+    width: 100%; /* Makes it responsive */
+    background-color: rgba(255, 255, 255, 0.15);
+    display: grid;
+    place-items: center; /* Centers child elements both ways */
+    max-width: 375px;
+    margin-bottom: 20px;
+}
+
+/* For the image inside logo-container */
+.logo-container img {
+    width: 100%; /* Makes image responsive within container */
+    height: auto; /* Maintains aspect ratio */
+    max-height: 300px; /* Limits maximum height */
+    object-fit: contain; /* Ensures full image is visible */
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.3)); /* Adds subtle glow */
+}
+
+/* For larger screens */
+@media only screen and (min-width: 768px) {
     .logo-container {
-      max-width: 520px;
+        max-width: 520px; /* Original desktop size */
     }
-  }
+    
+    .logo-container img {
+        max-height: 400px; /* Larger image on desktop */
+    }
+}

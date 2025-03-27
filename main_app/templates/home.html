@@ -5,10 +5,11 @@
 {% endblock %}
 {% block content %}
 
-<section class="logo-container">
+<!-- <section class="logo-container">
   <img src="{% static 'images/open-book-header-1.svg' %}" alt="The Book Logo" />
-</section>
+</section> -->
 
+{% if not user.is_authenticated %}
 <section class="log-in">
     <form action="{% url 'home' %}" method="post" class="login">
       <h1>Login</h1>
@@ -17,5 +18,5 @@
       <button type="submit" class="btn submit">Login</button>
     </form>
   </section>
-
+  {% endif %}
 {% endblock %}

@@ -19,4 +19,6 @@ urlpatterns = [
     
     path('reservations/<int:reservation_id>/associate-book/<int:book_id>/', views.associate_book, name='associate-book'),
     path('reservations/<int:reservation_id>/remove-book/<int:book_id>/', views.remove_book, name='remove-book'),
+
+    path('accounts/signup/', views.signup, name='signup'),
 ]

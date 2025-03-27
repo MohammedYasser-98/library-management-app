@@ -7,10 +7,7 @@
 
 <section class="page-header">
   <h1>All Books</h1>
-  <!-- <img src="{% static 'images/string.svg' %}" alt="A ball of string" />
-  <img src="{% static 'images/mouse.svg' %}" alt="A mouse" />
-  <img src="{% static 'images/post.svg' %}" alt="A scratching post" />
-  <img src="{% static 'images/fish.svg' %}" alt="A fishy toy" /> -->
+  
 </section>
 
 <section class="card-container">
@@ -19,8 +16,18 @@
       <div class="card-bg"></div>
       <a href="{% url 'book-detail' book.id %}">
         <div class="card-content">
-          <h2>Title: {{ book.title }}</h2>
-          <h2>Author: {{ book.author }}</h2>
+          <div class="card-img-container">
+            <img
+              src="{% static 'images/open-book.png' %}"
+              class="card-img-top"  
+              alt=""
+              style="height: 120px; object-fit: contain; width: 100%;"  
+            />
+          </div>
+          <div class="card-text-content">
+            <h2>Title: {{ book.title }}</h2>
+            <h2>Author: {{ book.author }}</h2>
+          </div>
         </div>
       </a>
     </div>
